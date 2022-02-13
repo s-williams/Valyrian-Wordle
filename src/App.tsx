@@ -72,24 +72,6 @@ function App() {
 
   const [stats, setStats] = useState(() => loadStats())
 
-  // Logic to show the signup modal
-  useEffect(() => {
-    let pageViews: Number
-
-    if (!localStorage.getItem('pageViews')) {
-      localStorage.setItem('pageViews', '1')
-      return
-    } else {
-      pageViews = parseInt(localStorage.getItem('pageViews')!) + 1
-      localStorage.setItem('pageViews', pageViews.toString())
-    }
-
-    if (pageViews > 3 && !localStorage.getItem('hasSignedUp')) {
-      setIsSignupModalOpen(true)
-      localStorage.setItem('pageViews', '0')
-    }
-  }, [])
-
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
   }, [guesses])
