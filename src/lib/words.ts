@@ -3,24 +3,22 @@ import { VALIDGUESSES } from '../constants/validGuesses'
 
 export const isWordInWordList = (word: string) => {
   return (
-    WORDS.includes(word.toLowerCase()) ||
-    VALIDGUESSES.includes(word.toLowerCase())
+    WORDS.some((w) => w[0] === word.toLowerCase()) ||
+    VALIDGUESSES.some((w) => w === word.toLowerCase())
   )
 }
 
 export const isWinningWord = (word: string) => {
-  return solution === word
+  return solution[0] === word
 }
 
 export const getWordOfDay = () => {
   // January 1, 2022 Game Epoch
-  const epochMs = 1641013200000
-  const now = Date.now()
-  const msInDay = 86400000
-  const index = Math.floor((now - epochMs) / msInDay)
+  const index = 0;
+  console.log(WORDS[index]);
 
   return {
-    solution: WORDS[index].toUpperCase(),
+    solution: WORDS[index],
     solutionIndex: index,
   }
 }

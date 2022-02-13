@@ -36,13 +36,14 @@ export const getStatuses = (
   const charObj: { [key: string]: CharStatus } = {}
 
   guesses.forEach((word) => {
-    word.split('').forEach((letter, i) => {
-      if (!solution.includes(letter)) {
+    const wor = word.toLocaleUpperCase();
+    const sol = solution[0].toLocaleUpperCase();
+    wor.split('').forEach((letter, i) => {
+      if (!sol.includes(letter)) {
         // make status absent
         return (charObj[letter] = 'absent')
       }
-
-      if (letter === solution[i]) {
+      if (letter === sol[i]) {
         //make status correct
         return (charObj[letter] = 'correct')
       }
@@ -58,7 +59,7 @@ export const getStatuses = (
 }
 
 export const getGuessStatuses = (guess: string): CharStatus[] => {
-  const splitSolution = solution.split('')
+  const splitSolution = solution[0].toLocaleUpperCase().split('')
   const splitGuess = guess.split('')
 
   const solutionCharsTaken = splitSolution.map((_) => false)

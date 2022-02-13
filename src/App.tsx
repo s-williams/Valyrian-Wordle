@@ -22,7 +22,7 @@ import {
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
 
-const DefinitionURL = `https://www.latindictionary.io/words/?word=${solution}`
+const DefinitionURL = `https://www.latindictionary.io/words/?word=${solution[0]}`
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -57,10 +57,10 @@ function App() {
 
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
-    if (loaded?.solution !== solution) {
+    if (loaded?.solution[0] !== solution[0]) {
       return []
     }
-    const gameWasWon = loaded.guesses.includes(solution)
+    const gameWasWon = loaded.guesses.includes(solution[0])
     if (gameWasWon) {
       setIsGameWon(true)
     }
@@ -111,7 +111,7 @@ function App() {
       }, 2000)
     }
 
-    const winningWord = isWinningWord(currentGuess)
+    const winningWord = isWinningWord(currentGuess.toLocaleLowerCase())
 
     if (currentGuess.length === 5 && guesses.length < 6 && !isGameWon) {
       setGuesses([...guesses, currentGuess])
@@ -254,7 +254,7 @@ function App() {
                 target="_blank"
                 rel="noopenner noreferrer"
               >
-                You lost. The correct word was ${solution}. Click here to see the definition of ${solution} on latindictionary.io.
+                You lost. The correct word was ${solution[0]}. Click here to see the definition of ${solution[0]} on latindictionary.io.
               </a>`}
           isOpen={isGameLost}
         />

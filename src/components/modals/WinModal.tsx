@@ -12,7 +12,7 @@ type Props = {
   handleShare: () => void
 }
 
-const DefinitionURL = `https://www.latindictionary.io/words/?word=${solution}`
+const DefinitionURL = `https://wiki.languageinvention.com/index.php?title=${solution[0]}`
 
 export const WinModal = ({
   isOpen,
@@ -35,7 +35,7 @@ export const WinModal = ({
             <MiniGrid guesses={guesses} />
           </div>
           <div className="mt-4 dark:text-white">
-            View the definition of {solution} on{' '}
+            View the definition of {solution[0]} on{' '}
             <a
               href={DefinitionURL}
               target="_blank"
