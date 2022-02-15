@@ -239,7 +239,7 @@ function App() {
                 target="_blank"
                 rel="noopenner noreferrer"
               >
-                You lost. The correct word was ${solution[0]}. Click here to see the definition of ${solution[0]} on latindictionary.io.
+                You lost. The correct word was ${solution[0]}. Click here to see the definition of ${solution[0]}.
               </a>`}
           isOpen={isGameLost}
         />
