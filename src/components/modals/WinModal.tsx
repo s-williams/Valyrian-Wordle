@@ -35,16 +35,9 @@ export const WinModal = ({
             <MiniGrid guesses={guesses} />
           </div>
           <div className="mt-4 dark:text-white">
-            View the definition of {solution[0]} on{' '}
-            <a
-              href={DefinitionURL}
-              target="_blank"
-              rel="noopenner noreferrer"
-              className="font-bold"
-            >
-              latindictionary.io
-            </a>
-            .
+            Congratulations!
+            <h4 className='text-lg leading-6 font-medium text-gray-900 dark:text-white mt-6'>{solution[0]}</h4>
+            <p className='text-sm text-gray-500 dark:text-gray-300'>{solution[1]} - {solution[2]}</p>
           </div>
         </div>
       </div>

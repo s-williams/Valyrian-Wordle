@@ -2,8 +2,9 @@ import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 
 export const shareStatus = (guesses: string[]) => {
+  const today = new Date();
   navigator.clipboard.writeText(
-    `Latin Wordle ${solutionIndex} ${guesses.length}/6\n\n` +
+    `Valyrian Wordle ${today.toLocaleDateString()} ${guesses.length}/6\n\n` +
       generateEmojiGrid(guesses)
   )
 }

@@ -12,7 +12,6 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { WinModal } from './components/modals/WinModal'
-import { SignupModal } from './components/modals/SignupModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { ThemeContext } from './ThemeProvider'
 import { isWordInWordList, isWinningWord, solution } from './lib/words'
@@ -22,7 +21,7 @@ import {
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
 
-const DefinitionURL = `https://www.latindictionary.io/words/?word=${solution[0]}`
+const DefinitionURL = `https://wiki.languageinvention.com/index.php?title=${solution[0]}`
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext)
@@ -32,7 +31,6 @@ function App() {
   const [isWinModalOpen, setIsWinModalOpen] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
@@ -152,16 +150,7 @@ function App() {
       <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div className="flex w-80 mx-auto items-center mb-8">
           <div className="ml-2.5 grow">
-            <h1 className="text-xl font-bold">Latin Wordle </h1>
-            by{' '}
-            <a
-              href="https://www.latindictionary.io"
-              target="_blank"
-              rel="noopenner noreferrer"
-              className="font-bold"
-            >
-              latindictionary.io
-            </a>
+            <h1 className="text-xl font-bold">Valyrian Wordle </h1>
           </div>
           <InformationCircleIcon
             className="h-6 w-6 cursor-pointer"
@@ -218,10 +207,6 @@ function App() {
         <AboutModal
           isOpen={isAboutModalOpen}
           handleClose={() => setIsAboutModalOpen(false)}
-        />
-        <SignupModal
-          isOpen={isSignupModalOpen}
-          handleClose={() => setIsSignupModalOpen(false)}
         />
 
         <div className="flex justify-center gap-3 mt-8">
