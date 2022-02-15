@@ -1,5 +1,4 @@
 import { getGuessStatuses } from './statuses'
-import { solutionIndex } from './words'
 
 export const shareStatus = (guesses: string[]) => {
   const today = new Date();

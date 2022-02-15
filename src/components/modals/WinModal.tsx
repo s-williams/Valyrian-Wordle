@@ -12,8 +12,6 @@ type Props = {
   handleShare: () => void
 }
 
-const DefinitionURL = `https://wiki.languageinvention.com/index.php?title=${solution[0]}`
-
 export const WinModal = ({
   isOpen,
   handleClose,
