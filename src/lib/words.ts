@@ -1,5 +1,6 @@
 import { WORDS } from '../constants/wordlist'
 import { VALIDGUESSES } from '../constants/validGuesses'
+import seedrandom from 'seedrandom';
 
 export const isWordInWordList = (word: string) => {
   return (
@@ -13,10 +14,9 @@ export const isWinningWord = (word: string) => {
 }
 
 export const getWordOfDay = () => {
-  // January 1, 2022 Game Epoch
-  const index = 0;
-  console.log(WORDS[index]);
-
+  const today = new Date();
+  const rng = seedrandom("" + today.getFullYear() + today.getMonth() + today.getDate());
+  const index = Math.floor(rng() * WORDS.length);
   return {
     solution: WORDS[index],
     solutionIndex: index,
