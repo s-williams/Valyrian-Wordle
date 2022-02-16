@@ -1,6 +1,6 @@
 # Valyrian Wordle
 
-Valyrian Wordle is a re-implementation of the modern classic [Wordle game](https://www.powerlanguage.co.uk/wordle/) into the constructed language of High Valyrian, constructed by David J. Peterson for George RR Martin's A Song of Ice of Fire and HBO's Game of Thrones. The game is available to play, for free, in your browser at: https://swilliamsio.itch.io/valyrian-wordle.
+Valyrian Wordle is a re-implementation of the modern classic [Wordle game](https://www.powerlanguage.co.uk/wordle/) into the [constructed language of High Valyrian](https://wiki.languageinvention.com/index.php?title=High_Valyrian_language), constructed by David J. Peterson for George RR Martin's A Song of Ice of Fire and HBO's Game of Thrones. The game is available to play, for free, in your browser at: https://swilliamsio.itch.io/valyrian-wordle.
 
 <p align="center">
   <img src="screenshots/demo.png">
