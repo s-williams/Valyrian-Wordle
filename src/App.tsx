@@ -130,7 +130,7 @@ function App() {
   }
 
   const onReset = () => {
-    if (isGameWon || isGameLost) {
+    if (isGameWon || isGameLost || guesses.includes(solution[0].toLocaleUpperCase())) {
       setGuesses([])
       setIsGameLost(false)
       setIsGameWon(false)
