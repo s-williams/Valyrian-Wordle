@@ -19,3 +19,9 @@ $ cd valyrian-wordle
 $ npm install
 $ npm run start
 ```
+
+To build:
+
+```bash
+$ npm run build
+```
